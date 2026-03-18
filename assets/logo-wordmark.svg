@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <!-- KK13 Wordmark - geometric angular style -->
+  <defs>
+    <style>
+      .wm{fill:#ffffff;font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:32px;letter-spacing:0.3em}
+    </style>
+  </defs>
+  <text x="0" y="30" class="wm">KK13</text>
+</svg>
