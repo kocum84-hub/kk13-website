@@ -191,6 +191,17 @@
     .app-ban{margin-top:44px;padding:32px 36px;background:linear-gradient(135deg,rgba(200,255,0,0.06),rgba(200,255,0,0.015));border:1px solid rgba(200,255,0,0.12);border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .app-ban h4{font-size:clamp(18px,2.5vw,26px);letter-spacing:-0.03em}.app-ban h4 em{color:var(--accent);font-style:normal}
     .app-ban p{margin-top:6px;color:var(--muted);font-size:13px}
+    /* Gallery */
+    .gg{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:12px}
+    .gi{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:3/4;cursor:pointer;transition:.35s}
+    .gi.wide{grid-column:span 2;aspect-ratio:16/9}
+    .gi img{width:100%;height:100%;object-fit:cover;filter:grayscale(80%);opacity:.8;transition:.5s}
+    .gi:hover img{filter:grayscale(30%);opacity:1;transform:scale(1.03)}
+    .gi:hover{border-color:rgba(200,255,0,0.15)}
+    .gi-ov{position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);opacity:0;transition:.35s}
+    .gi:hover .gi-ov{opacity:1}
+    .gi-ov span{font-family:var(--font-h);font-size:13px;font-weight:600;letter-spacing:.01em}
+    @media(max-width:760px){.gg{grid-template-columns:1fr}.gi.wide{grid-column:1;aspect-ratio:16/9}}
     /* Journal */
     .jg{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .jc{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel);transition:.28s}
@@ -486,6 +497,22 @@
       </div>
     </section>
 
+    <!-- 8. CURATED GALLERY -->
+    <section class="s" id="gallery">
+      <div class="c">
+        <span class="ey rv">Performance Environment</span>
+        <h2 class="st rv">Where execution meets preparation.</h2>
+        <p class="sc rv">Competition environments, coaching sessions, and the training process behind structured performance development.</p>
+        <div class="gg">
+          <div class="gi wide rv"><img src="https://static.wixstatic.com/media/69d80b_637223f0281f4318933db84ac6ca5940~mv2.jpg/v1/fill/w_960,h_540,q_80/IMG_0809.jpg" alt="HYROX competition environment" loading="lazy" /><div class="gi-ov"><span>Competition Environment</span></div></div>
+          <div class="gi rv"><img src="https://static.wixstatic.com/media/69d80b_6e27bd9e9bfe4f44a3c27e3ff498dce3~mv2.jpg/v1/fill/w_600,h_800,q_80/IMG_9737.jpg" alt="Performance coaching session" loading="lazy" /><div class="gi-ov"><span>Coaching Session</span></div></div>
+          <div class="gi rv"><img src="https://static.wixstatic.com/media/69d80b_b9d269bccfc74bb7833a8bf12aeb5533~mv2.jpg/v1/fill/w_600,h_800,q_80/IMG_9741.jpg" alt="Strength training" loading="lazy" /><div class="gi-ov"><span>Strength Training</span></div></div>
+          <div class="gi rv"><img src="https://static.wixstatic.com/media/69d80b_4b8b8b26ecd04228a5b052069ccf6592~mv2.jpg/v1/fill/w_600,h_800,q_80/coaching4.jpg" alt="Barbell coaching" loading="lazy" /><div class="gi-ov"><span>Barbell Programming</span></div></div>
+          <div class="gi wide rv"><img src="https://static.wixstatic.com/media/69d80b_f4a01fa731834473830935778ef8e88f~mv2.jpg/v1/fill/w_960,h_540,q_80/coaching3.jpg" alt="Training facility" loading="lazy" /><div class="gi-ov"><span>Training Facility</span></div></div>
+        </div>
+      </div>
+    </section>
+
     <!-- 9. JOURNAL -->
     <section class="s" id="journal">
       <div class="c">
@@ -518,6 +545,7 @@
             <div class="fg">
               <div class="fl"><label for="fn">Name</label><input id="fn" name="name" type="text" placeholder="Full name" required /></div>
               <div class="fl"><label for="fe">Email</label><input id="fe" name="email" type="email" placeholder="Email address" required /></div>
+              <div class="fl"><label for="fp">Phone</label><input id="fp" name="phone" type="tel" placeholder="+971 ..." /></div>
               <div class="fl"><label for="fg2">Goal</label><input id="fg2" name="goal" type="text" placeholder="Fat loss, HYROX, strength..." /></div>
               <div class="fl"><label for="fc">Coaching Type</label>
                 <select id="fc" name="coachingType">
@@ -528,6 +556,14 @@
                   <option>Strength & Conditioning</option>
                   <option>Body Composition</option>
                   <option>Online Coaching</option>
+                </select>
+              </div>
+              <div class="fl"><label for="fl2">Preferred Location</label>
+                <select id="fl2" name="location">
+                  <option value="">Select location</option>
+                  <option>Dubai, UAE</option>
+                  <option>Istanbul, T&uuml;rkiye</option>
+                  <option>Online / Remote</option>
                 </select>
               </div>
               <div class="fl fw"><label for="fm">Message</label><textarea id="fm" name="message" placeholder="Current situation, training background, what you want to achieve."></textarea></div>
